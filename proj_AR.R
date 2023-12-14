@@ -60,25 +60,25 @@ kc
 comp_gig<-induced.subgraph(grafo, which(components$membership == which.max(components$csize)))
 plot(comp_gig)
 
-# Numero de nodos
+# Numero de nodos da componente gigante
 vcount(comp_gig)
 
-# Numero de ligações
+# Numero de ligações da componente gigante
 ecount(comp_gig)
 
-# Densidade da rede
+# Densidade da componente gigante
 edge_density(comp_gig)
 
-# Grau médio
+# Grau médio da componente gigante
 mean(degree(comp_gig,mode= "in"))
 
-# Distribuição de grau
+# Distribuição de grau da componente gigante
 table(degree(grafo,mode="in"))
 degree_distribution(comp_gig)
 
 is_connected(comp_gig)
 
-# Estudo da associação do grau
+# Estudo da associação do grau da componente gigante
 assortativity_degree(comp_gig,directed=F)
 
 # Distâncias mais curtas
@@ -87,18 +87,17 @@ diameter(comp_gig)
 
 log10(vcount(comp_gig))
 
-# Estudo dos triângulos
+# Estudo dos triângulos da componente gigante
 transitivity(comp_gig, type = c("global"))
 count_triangles(comp_gig)
 sum(count_triangles(comp_gig))
 
-# Parâmetro de heterogeneidade
+# Parâmetro de heterogeneidade da componente gigante
 deg <- degree(comp_gig,mode="total")
 ht <- mean(deg*deg)/(mean(deg)^2)
 ht
 
-# Decomposição de core da rede
+# Decomposição de core da componente gigante
 core_decomp <- coreness(comp_gig)
 max(core_decomp)
 table(core_decomp)
-
