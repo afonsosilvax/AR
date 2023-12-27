@@ -1,6 +1,6 @@
 library(igraph)
 library(here)
-
+ 
 grafo<-read.graph(here("trab_links.txt"), format = c('edgelist'), directed = F)
 plot(grafo)
 
